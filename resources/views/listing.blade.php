@@ -1,5 +1,2 @@
-<h1>{{ $listing['title'] }}</h1>
-
-<p>{{ $listing['desc'] }}</p>
-
-<a href="/">← Back</a>
+<h2>{{ $listing['title'] }}</h2>
+<p>{{ $listing['description'] }}</p> 

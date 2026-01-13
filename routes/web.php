@@ -1,24 +1,17 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
-use App\Models\Listing;
+use App\Models\Listings;
 
-Route::get('/', function () {
-    return view('welcome', [
-        'header' => 'Latest Posts',
-        'listing' => Listing::getAll()
+
+Route::get('/' , function () {
+    return view('listings',[
+        'heading' => 'Latest Listings',
+        'listing' => Listings::all()
     ]);
 });
 
-Route::get('/list/{id}', function ($id) {
-    $listing = Listing::find($id);
 
-    if (!$listing) {
-        abort(404);
-    }
-
-    return view('listing', [
-        'listing' => $listing
-    ]);
+Route::get('/listing/{id}', function ($id) {
+    return view('listing',[
+            'listing'=> Listings::find($id)]);
 });
