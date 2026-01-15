@@ -18,9 +18,8 @@ return new class extends Migration
             $table->string('company');
             $table->string('location');
             $table->string('email');
-            $table->string('website');
-            $table->string('description');
-
+            $table->string('website')->nullable();
+            $table->longText('description');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('listings');
+        Schema::dropIfExists(table: 'listings');
     }
 };

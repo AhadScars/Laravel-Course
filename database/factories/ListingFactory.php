@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Listing>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class ListingFactory extends Factory
+class listingFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,12 +17,13 @@ class ListingFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(3),
-            'tags' => 'php,laravel,backend',
+            'title' => fake()->sentence(),
+            'tags' => 'laravel, javascript, api',
             'company' => fake()->company(),
-            'email' => fake()->unique()->safeEmail(),
+            'location' => fake()->city(),
+            'email' => fake()->companyEmail(),
             'website' => fake()->url(),
-            'description' => fake()->paragraph(5),
+            'description' => fake()->paragraph(),
         ];
     }
 }

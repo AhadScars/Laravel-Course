@@ -1,17 +1,17 @@
 <?php
 
-use App\Models\Listings;
+use App\Models\Listing;
 
 
 Route::get('/' , function () {
     return view('listings',[
         'heading' => 'Latest Listings',
-        'listing' => Listings::all()
+        'listing' => Listing::all()
     ]);
 });
 
 
 Route::get('/listing/{id}', function ($id) {
     return view('listing',[
-            'listing'=> Listings::find($id)]);
+            'listing'=> Listing::find($id)]);
 });
