@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
 
 
 
-        Listing::factory(8)->create();
+        Listing::factory(5)->create();
 
     }
 }
