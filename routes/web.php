@@ -1,18 +1,11 @@
 <?php
 
 use App\Models\Listing;
+use App\Http\Controllers\ListingController;
 
 
-Route::get('/' , function () {
-    return view('listings',[
-        'heading' => 'Latest Listings',
-        'listing' => Listing::all()
-    ]);
-});
+Route::get('/' , [ListingController::class, 'index']);
 
 
-Route::get('/listing/{listing}', function (Listing  $listing) {
-    return view('listing',[
-            'listing'=> $listing
-        ]);
-});
+
+Route::get('/listing/{listing}',[ListingController::class,'show']);
